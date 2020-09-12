@@ -388,7 +388,7 @@ if __name__ == "__main__":
     print('est_source', est_source)
 
 #%%
-    #error!!!??????????????????????
+    
     #fatemeh: I put a mixture x as input instead of randint for mixture above
     # test Conv-TasNet
     import os
@@ -404,4 +404,27 @@ if __name__ == "__main__":
     est_source = conv_tasnet(x)
     print('est_source', est_source)
     print('est_source size', est_source.size())
+#%%
+    import matplotlib.pyplot as plt
+    import librosa
+    import numpy
+    mix_audio_path='D:/Amir Kabir University/thesis/my code/mygithub/mydata/tr/mix12_ff.wav'
+    data, sr = librosa.load(mix_audio_path)
+    plt.figure()
+    plt.plot(data)
+    plt.title('mix')
 
+    import numpy as np
+    import soundfile as sf
+#data, sr = librosa.load(mix_audio_path)
+    d=est_source.detach().numpy()
+    samplerate=sr
+#rate = 44100
+#data = np.random.uniform(-1, 1, size=(rate * 10, 2))
+    s_path='est_source.wav'
+# Write out audio as 24bit PCM WAV
+
+#data, sr = librosa.load(s_path)
+#plt.figure()
+#plt.plot(data)
+#plt.title('s')
