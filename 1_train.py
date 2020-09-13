@@ -82,12 +82,13 @@ def main(train_dir,batch_size,sample_rate, segment,valid_dir,cv_maxlen,shuffle,n
         model.cuda()
     # optimizer
     if optimizer == 'sgd':
-        optimizier = torch.optim.SGD(model.parameters(),
+        optimizer = torch.optim.SGD(model.parameters(),
                                      lr=lr,
                                      momentum=momentum,
                                      weight_decay=l2)
     elif optimizer == 'adam':
-        optimizier = torch.optim.Adam(model.parameters(),
+     #fatemeh: change optimizier to optimizer
+        optimizer = torch.optim.Adam(model.parameters(),
                                       lr=lr,
                                       weight_decay=l2)
     else:
